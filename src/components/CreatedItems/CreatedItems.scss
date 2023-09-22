@@ -1,0 +1,38 @@
+.delItemConfirm{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .deleteDialogBox{
+        padding: 2%;
+        background-color: white;
+        height: 75px;
+        width:340px;
+        color:rgb(61, 61, 61);
+        border-radius: 10px;
+
+        .deleteDailogBoxButtons{
+            display: flex;
+            justify-content: flex-end;
+
+            .deleteButton{
+                margin-left: 10px;
+                background-color: rgb(237, 76, 36);;
+            }
+
+            .cancelButton{
+                background-color: rgb(224, 224, 224);
+                color: rgb(75, 75, 75);
+            }
+        }
+    }
+}
+.delItemConfirmHide{
+    display: none;
+}

@@ -1,0 +1,38 @@
+$createButtonColor: rgb(237, 76, 36);
+
+.dashBoardHeading{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(31, 31, 31);
+    padding: 1%;
+}
+.dashboardButtons{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    %buttons{
+        width: 25vh;
+        height: 7vh;
+    }
+    .viewItems{
+        margin: 1% 1%;
+        background-color: rgb(39, 91, 167);
+        @extend %buttons;
+    }
+    .createItem{
+        background-color: $createButtonColor;
+        @extend %buttons;
+    }
+    .browseItem{
+        background-color: rgb(39, 167, 82);
+        @extend %buttons;
+    }
+}
+
+
+

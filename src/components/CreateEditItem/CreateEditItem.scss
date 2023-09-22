@@ -1,0 +1,52 @@
+$createButtonColor: rgb(237, 76, 36);
+
+.createItemDialogBoxBG{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+.createItemDialogBoxHide{
+    display: none;
+}
+
+.createItemDialogBox{
+    height: 290px;
+    width: 30%;
+    background-color: white;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 10px;
+
+    .createItemHeading{
+        text-align:center;
+        margin:10px;
+        font-weight:500;
+        font-size:20px;
+        color:rgb(53, 53, 53);
+    }
+    
+    .productPrice{
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    .cancelCreateButtonsDiv{
+        margin-top: 4% ;
+        display: flex;
+        justify-content: flex-end;
+        .cancelCreating{
+            background-color:rgb(224, 224, 224);
+            color: rgb(75, 75, 75);
+        }
+        .createItemConfirm{
+            margin-left: 10px;
+            background-color: $createButtonColor;
+        }
+    }
+}

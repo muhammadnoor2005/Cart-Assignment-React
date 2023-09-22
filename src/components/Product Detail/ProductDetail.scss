@@ -1,0 +1,53 @@
+.productDetailMainDiv{
+    margin: 3%;
+
+    .productName{
+        font-size: 25px;
+        font-weight: 500;    
+    }
+
+    .productImgDiv{
+        display: flex;
+        justify-content: center;
+        background-color: rgb(213, 213, 213);
+        border-radius: 10px;
+        margin: 2% 30px 3% 30px;
+
+        .productImg{
+            display: flex;
+            justify-content: center;
+            height: 50vh;
+            width: 70vh;
+            
+        }
+    }
+
+    .descHeading{
+        font-size: 22px;
+        font-weight: 500;
+        color: rgb(48, 48, 48);
+    }
+    .priceSpan{
+        font-size: 25px;
+        color: rgb(99, 99, 99);
+    }
+    .descVal{
+        color: rgb(102, 102, 102);
+    }
+
+}
+
+.cartImg{
+    height: 60px;
+    position: absolute;
+    top:0px;
+    right: 10px;
+    cursor: pointer;
+}
+.cartItemCount{
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top:14px;
+    right: 60px; 
+}

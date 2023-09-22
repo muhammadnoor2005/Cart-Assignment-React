@@ -1,0 +1,23 @@
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.productsCard{
+    margin:2%;
+    background-color:aliceblue;
+    text-decoration: none;
+} 
+.emptyItemsDiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}
