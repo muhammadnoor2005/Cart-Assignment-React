@@ -18,11 +18,11 @@ export default function DashBoard(){
         }
     },[creatItemBool]);
     
-    const uploadItem = (event,titleVal,descVal,priceVal) => {
+    const uploadItem = (event,titleVal,descVal,priceVal,base64Img) => {
         event.preventDefault();
         setBool(false);
 
-        const productInfo = {titleVal,descVal,priceVal,count:0,id:milliSec}
+        const productInfo = {titleVal,descVal,priceVal,count:0,id:milliSec,productImg:base64Img};
         const updatedItems = [...products,productInfo];
         
         localStorage.setItem("items",JSON.stringify(updatedItems));

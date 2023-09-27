@@ -41,7 +41,7 @@ export function decreaseItem(id){
     
 };
 
-export function editItem(titleVal,descVal,priceVal,id){
+export function editItem(titleVal,descVal,priceVal,id,base64Img){
     const items = gettingParsedItems();
 
     items.forEach((item) => {
@@ -49,6 +49,7 @@ export function editItem(titleVal,descVal,priceVal,id){
             item.titleVal = titleVal;
             item.descVal = descVal;
             item.priceVal = priceVal;
+            item.productImg = base64Img;
         }
     });
     localStorage.removeItem("items");

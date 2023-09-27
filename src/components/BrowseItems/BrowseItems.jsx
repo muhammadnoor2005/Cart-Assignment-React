@@ -10,15 +10,19 @@ export default function BrowseItems(){
     const [cartItemCount,setCount] = useState(0);
 
     useEffect(()=>{
-        setItems(gettingParsedItems);
         
-        let itemCount = 0;
+        const parsedItems = gettingParsedItems();
+        if(parsedItems){
+            let itemCount = 0;
 
-        gettingParsedItems().forEach((item) => {
-            itemCount += item.count;
-        });
-
-        setCount(itemCount);
+            gettingParsedItems().forEach((item) => {
+                itemCount += item.count;
+            });
+            
+            setItems(parsedItems);
+            setCount(itemCount);
+        }
+       
 
     },[]);
 
@@ -30,25 +34,27 @@ export default function BrowseItems(){
         )
     }
     const itemsList = items.map((item) => {
+        const base64Data = item.productImg.split(",")[1];
+        const decodeImg = `data:image/jpg;base64,${base64Data}`;
         return(
-            <>
-                <Link to={"/cart"}><img src="/images/cartIcon.png" alt="cart" className="cartImg"/></Link>
-                <span className="cartItemCount">{cartItemCount}</span>
-
                 <Link key={item.id} to={`/browse items/${item.id}`} className='productsCard'>
                     <Card 
                     hoverable
-                    cover={<img src={"/images/productImg.jpg"} width={170} height={180} alt={"product"}/>}
+                    cover={<img src={decodeImg} width={170} height={180} alt={"product"}/>}
                     >
                     <Meta title={item.titleVal} description={`$${item.priceVal}`} />
                     </Card>
                 </Link>
-            </>
         )
     })
     return(
-        <div className="products">
-            {itemsList}
+        <div>
+            <Link to={"/cart"}><img src={"/images/cartIcon.png"} alt="cart" className="cartImg"/></Link>
+            <span className="cartItemCount">{cartItemCount}</span>
+            
+            <div className="products">
+                {itemsList}
+            </div>
         </div>
     )
 }

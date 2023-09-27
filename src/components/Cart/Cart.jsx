@@ -11,7 +11,7 @@ export default function Cart(){
     useEffect(() => {
         setItems(gettingParsedItems);
 
-        let itemCount = 0;
+        let itemCount = 0; 
 
         gettingParsedItems().forEach((item) => {
             itemCount += item.count;
@@ -36,9 +36,11 @@ export default function Cart(){
             return <div></div>
             
         }
+        const base64Data = product.productImg.split(",")[1];
+        const decodeImg = `data:image/jpg;base64,${base64Data}`;
         return(
             <div className="cartItemMainDiv" key={product.id}>
-                <img src="/images/productImg.jpg" alt="product" className="cartItemImg"/>
+                <img src={decodeImg} alt="product" className="cartItemImg"/>
                 <div style={{
                     display:"flex",
                     justifyContent:"space-between",

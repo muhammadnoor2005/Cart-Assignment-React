@@ -1,4 +1,4 @@
-import "./ProductDetail.scss"
+import "./ProductDetail.scss";
 import { useParams } from "react-router-dom";
 import { Button } from "antd";
 import { addItem } from "../../services/cart";
@@ -13,6 +13,11 @@ export default function ProductDetail(){
     const {id} = useParams();
 
     const product = items.find(p => p.id === +id);
+
+    let decodedImg ;
+    const base64Data = product.productImg.split(",")[1];
+    const decodeImg = `data:image/jpg;base64,${base64Data}`;
+    decodedImg = decodeImg;
 
     useEffect(()=>{
         let itemCount = 0;
@@ -36,7 +41,7 @@ export default function ProductDetail(){
             <div className="productName">{product.titleVal}</div>
 
             <div className="productImgDiv">
-                <img className="productImg"src="/images/productImg.jpg" alt="prodcuct"/>
+                <img className="productImg" src={decodedImg} alt="prodcuct"/>
             </div>
             
             <div>

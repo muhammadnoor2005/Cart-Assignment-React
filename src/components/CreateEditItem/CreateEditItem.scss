@@ -17,11 +17,12 @@ $createButtonColor: rgb(237, 76, 36);
 }
 
 .createItemDialogBox{
-    height: 290px;
+    height: auto;
     width: 30%;
     background-color: white;
     padding-left: 3%;
     padding-right: 3%;
+    padding-bottom: 20px;
     border-radius: 10px;
 
     .createItemHeading{
@@ -36,6 +37,41 @@ $createButtonColor: rgb(237, 76, 36);
         margin-top: 2%;
         margin-bottom: 2%;
     }
+
+    .uploadImgDiv{
+        background-color: rgb(241, 241, 241);
+        margin-top: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        .uploadImgSpan{
+            font-size: 12px;
+            color: rgb(129, 129, 129);
+            margin-left: 5px;
+        }
+    }
+
+    .uploadedImgPreviewDiv{
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+
+        .uploadedImg{
+            max-height: 100px;
+            max-width: 100px;
+        }
+
+        .removeImgSpan{
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 12px;
+            color: red;
+        }
+    }
+
     .cancelCreateButtonsDiv{
         margin-top: 4% ;
         display: flex;
